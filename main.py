@@ -1,15 +1,15 @@
-from pyrogram import Client
-from pytgcalls import PyTgCalls
-
-bot = Client("my_bot")  # Adjust with your bot name and configuration
-call_py = PyTgCalls(bot)  # Pass the pyrogram client to PyTgCalls
+import asyncio
+from pytgcalls import idle
+from config import call_py, bot
 
 async def main():
     try:
         print("STARTING UBOT CLIENT")
         await bot.start()
+        print("UBOT CLIENT STARTED")
         print("STARTING PYTGCALLS CLIENT")
         await call_py.start()
+        print("PYTGCALLS CLIENT STARTED")
         print(
             """
         ------------------------
@@ -23,3 +23,7 @@ async def main():
     finally:
         print("STOPPING USERBOT")
         await bot.stop()
+        print("USERBOT STOPPED")
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
