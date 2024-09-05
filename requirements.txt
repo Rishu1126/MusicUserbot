@@ -1,6 +1,6 @@
-TgCrypto
-pyrogram==1.4.16
-py-tgcalls==0.8.6
+pyrogram>=2.0.0
+tgcrypto
+py-tgcalls==1.2.0  # Adjust version based on compatibility
 requests
 aiohttp
 aiofiles
